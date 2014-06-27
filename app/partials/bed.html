@@ -23,8 +23,16 @@
 <div class="rows">
     <div class="col-md-12">
         <br>
-
+        <h1>Things</h1>
+    {{thngs}}
         <br>
+        <h1>Thing</h1>
+        {{thng}}
+        <h1>Properties</h1>
+        {{properties}}
+        <div data-ng-repeat="property in properties">
+        <span am-time-ago="property.createdAt" ></span> {{property.value}}
+        </div>
 
     </div>
 </div>

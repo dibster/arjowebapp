@@ -95,6 +95,19 @@
                         .error(function () {
                             return 'Error';
                         });
+                },
+                getProperties : function(thngId) {
+                    return  $http({
+                        url: API.url + 'thngs/' + thngId + '/properties/rail' + '?access_token=' + API.key,
+                        method: "GET",
+                        headers: {'Content-Type': 'application/json; charset=utf-8'}
+                    })
+                        .success(function (properties) {
+                            return properties;
+                        })
+                        .error(function () {
+                            return 'Error';
+                        });
                 }
             }
         })

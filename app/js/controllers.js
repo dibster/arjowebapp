@@ -14,8 +14,25 @@ angular.module('myApp.controllers', [])
         });
     }])
 
-   .controller(' BedCtrl', ['$scope', 'syncData', function($scope, syncData) {
+   .controller('BedCtrl', ['$scope', 'syncData', 'Thngs', function($scope, syncData, Thngs) {
         console.log('in bed controller');
+        var retryInterval = 10; //seconds
+        console.log('retry interval : ' + retryInterval);
+        // return all Arjo Products from API
+        Thngs.all().then(function (result) {
+            $scope.thngs = result.data;
+            console.log($scope.thngs[0]);
+        });
+        Thngs.get('UdHrGg9APBpRCK66rKdb7Ckh').then(function (result) {
+            $scope.thng = result.data;
+            console.log($scope.thng);
+        });
+        Thngs.getProperties('UdHrGg9APBpRCK66rKdb7Ckh').then(function (result) {
+            $scope.properties = result.data;
+            console.log($scope.properties);
+        });
+
+
    }])
 
 
