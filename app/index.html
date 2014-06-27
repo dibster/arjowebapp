@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="196x196" href="img/arjo.jpg">
+    <title>Arjo Huntleigh</title>
+
+    <link rel="stylesheet" href="themes/cyborg/bootstrap.min.css"/>
+    <link rel="stylesheet" href="font-awesome-4.1.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="bootstrap-3.1.1-dist/css/bootstrap.min.css"/>-->
+</head>
+<body ng-cloak-auth class="hide">
+
+  <!--<ul class="menu">-->
+    <!--<li><a href="#/home">home</a></li>-->
+    <!--<li><a href="#/chat">chat</a></li>-->
+    <!--<li ng-show-auth="logout,error"><a href="#/login">login</a></li>-->
+    <!--<li ng-show-auth="login"><a href="#/account">account</a></li>-->
+  <!--</ul>-->
+
+  <div ng-view></div>
+
+  <!--<div>AngularFire-seed v<span app-version></span></div>-->
+
+  <script src="jquery/jquery.min.js"></script>
+
+  <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+  <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.js"></script>
+  <script src="bootstrap-3.1.1-dist/js/bootstrap.js"></script>
+  <script src="scanthng.js/src/scanthng.js"></script>
+  <script src="scanthng.js/src/vendor/zepto.js"></script>
+  <script src="scanthng.js/src/vendor/spin.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/service.login.js"></script>
+  <script src="js/service.firebase.js"></script>
+  <script src="js/module.waitForAuth.js"></script>
+  <script src="js/module.routeSecurity.js"></script>
+</body>
+</html>
