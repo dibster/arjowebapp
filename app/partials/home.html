@@ -18,4 +18,22 @@
     </div><!-- /.navbar-collapse -->
 </nav>
         <h1>Products</h1>
-        {{products}}
+
+<div class="rows">
+
+    <div class="col-md-12">
+
+        <ul class="media-list">
+            <li class="media" data-ng-repeat="product in products">
+                <a class="pull-left" href="#">
+                    <img class="media-object img-rounded" src="{{product.photos[0]}}" width="50" height="50" alt="...">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">{{product.fn}}</h4>
+                    {{product.description}}
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+

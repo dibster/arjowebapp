@@ -13,9 +13,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#/consumer/detail">Weight</a></li>
-            <li><a href="#">Rail</a></li>
-            <li><a href="#">Temperature</a></li>
+            <li class="active"><a href="#/consumer/detail">Report Problem</a></li>
+            <li><a href="#">Schedule Visit</a></li>
+            <li><a href="#">Notify Hospital</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
@@ -23,16 +23,41 @@
 <div class="rows">
     <div class="col-md-12">
         <br>
-        <h1>Things</h1>
-    {{thngs}}
-        <br>
-        <h1>Thing</h1>
-        {{thng}}
-        <h1>Properties</h1>
-        {{properties}}
-        <div data-ng-repeat="property in properties">
-        <span am-time-ago="property.createdAt" ></span> {{property.value}}
-        </div>
+        <!--<h1>Things</h1>-->
+    <!--{{thngs}}-->
+        <!--<br>-->
+        <h1>Bed : Enterpise 9000</h1>
+        <h3>Current Status</h3>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <!--alert-danger-->
+                <span class="badge">{{thng.properties.rail}}</span>
+                Rail
+            </li>
+            <li class="list-group-item">
+                <span class="badge ">{{thng.properties.weight}}</span>
+                Weight
+            </li>
+            <li class="list-group-item">
+                <span class="badge">{{thng.properties.temperature}}</span>
+                Temperature
+            </li>
+        </ul>
+        <h3>Rail Movement</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Rail Status</th>
+                <th>When</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr data-ng-repeat="property in properties">
+                <td>{{property.value}}</td>
+                <td><span am-time-ago="property.createdAt"></span></td>
+            </tr>
+            </tbody>
+        </table>
 
     </div>
 </div>
