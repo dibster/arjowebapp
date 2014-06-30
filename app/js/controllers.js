@@ -12,6 +12,14 @@ angular.module('myApp.controllers', [])
             $scope.products = result.data;
             console.log($scope.products[0]);
         });
+
+        $scope.getProducts = function() {
+            Products.all().then(function (result) {
+                $scope.products = result.data;
+            });
+        }
+        //setInterval($scope.getProducts, 1000);
+
     }])
 
    .controller('BedCtrl', ['$scope', 'syncData', 'Thngs', function($scope, syncData, Thngs) {
@@ -32,6 +40,18 @@ angular.module('myApp.controllers', [])
             console.log($scope.properties);
         });
 
+        $scope.getThngs = function() {
+            console.log('refresh thngs');
+            Thngs.get('UdHrGg9APBpRCK66rKdb7Ckh').then(function (result) {
+                $scope.thng = result.data;
+                console.log($scope.thng);
+            });
+            Thngs.getProperties('UdHrGg9APBpRCK66rKdb7Ckh').then(function (result) {
+                $scope.properties = result.data;
+                console.log($scope.properties);
+            });
+        }
+        //setInterval($scope.getThngs, 1000);
 
    }])
 

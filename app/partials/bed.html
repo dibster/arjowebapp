@@ -13,7 +13,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#/consumer/detail">Report Problem</a></li>
+            <li class="active"><a href="#/bed">Status</a></li>
             <li><a href="#">Schedule Visit</a></li>
             <li><a href="#">Notify Hospital</a></li>
         </ul>
@@ -22,12 +22,40 @@
 
 <div class="rows">
     <div class="col-md-12">
-        <br>
         <!--<h1>Things</h1>-->
     <!--{{thngs}}-->
         <!--<br>-->
-        <h1>Bed : Enterpise 9000</h1>
-        <h3>Current Status</h3>
+        <h1 data-ng-click="getThngs()">Enterpise 9000</h1>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Service Status</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <td>Location</td>
+                        <td>Watford</td>
+                    </tr>
+                    <tr>
+                        <td>Installed</td>
+                        <td>23 June 2013</td>
+                    </tr>
+                    <tr>
+                        <td>Next Service</td>
+                        <td>23 June 2014</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Bed Status Now</h3>
+            </div>
+            <div class="panel-body">
         <ul class="list-group">
             <li class="list-group-item">
                 <!--alert-danger-->
@@ -43,6 +71,7 @@
                 Temperature
             </li>
         </ul>
+            </div>
         <h3>Rail Movement</h3>
         <table class="table">
             <thead>
@@ -52,7 +81,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr data-ng-repeat="property in properties">
+            <tr data-ng-repeat="property in properties  | orderBy:'createdAt':true track by $index">
                 <td>{{property.value}}</td>
                 <td><span am-time-ago="property.createdAt"></span></td>
             </tr>

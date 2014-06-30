@@ -7,7 +7,7 @@ angular.module('myApp',
    )
 
    .run(['loginService', '$rootScope', 'FBURL', function(loginService, $rootScope, FBURL) {
-      if( FBURL === 'https://flickering-fire-9651.firebaseio.com' ) {
+      if( FBURL === 'https://arjohuntleigh.firebaseio.com' ) {
          // double-check that the app has been configured
          angular.element(document.body).html('<h1>Please configure app/js/config.js before running!</h1>');
          setTimeout(function() {
